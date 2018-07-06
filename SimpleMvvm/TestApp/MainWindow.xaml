@@ -17,10 +17,31 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
 
 		<TextBox Text="{Binding TestLabel,UpdateSourceTrigger=PropertyChanged}" Margin="2" />
-		<CheckBox Grid.Row="1" Margin="2" IsChecked="{Binding CanWeClose}" Content="Can We Close" />
+		<CheckBox Grid.Row="1" Margin="2" IsChecked="{Binding CanWeClose}" Content="Click here to allow closing" />
+
+		<ListBox Grid.Row="2" Margin="0,4" ItemsSource="{Binding ListItems}" SelectedItem="{Binding SelectedListItem}">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal" Margin="0,2">
+						<CheckBox IsChecked="{Binding IsChecked}" Margin="8,4" VerticalAlignment="Center" />
+						<TextBlock Text="{Binding Label}" VerticalAlignment="Center" />
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+
+		<StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical">
+			<TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding SelectionText}" Margin="4" />
+			<Button Content="clear selection" Command="{Binding CommandClearSelection}" Margin="0,10" />
+			<Button Content="clear selection with param" Command="{Binding CommandClearSelectionParameter}" CommandParameter="{Binding SelectedListItem}" />
+		</StackPanel>
 	</Grid>
 </Window>

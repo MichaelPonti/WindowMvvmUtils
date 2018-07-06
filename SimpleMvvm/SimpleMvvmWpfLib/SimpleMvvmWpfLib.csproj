@@ -49,6 +49,9 @@
   <ItemGroup>
     <Compile Include="BaseItemViewModel.cs" />
     <Compile Include="BaseViewModel.cs" />
+    <Compile Include="Commands\ActionCommand.cs" />
+    <Compile Include="Commands\ActionCommandBase.cs" />
+    <Compile Include="Commands\ActionCommandT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
