@@ -69,9 +69,12 @@
     <Compile Include="WindowEvents\CanCloseResult.cs" />
     <Compile Include="WindowEvents\DelegateCanCloseCheck.cs" />
     <Compile Include="WindowEvents\DelegateLoadedAction.cs" />
+    <Compile Include="WindowEvents\DelegateVisibilityChanged.cs" />
     <Compile Include="WindowEvents\ICanCloseCheck.cs" />
     <Compile Include="WindowEvents\ICanCloseResult.cs" />
     <Compile Include="WindowEvents\ILoadedAction.cs" />
+    <Compile Include="WindowEvents\IsVisibilityChangedBindings.cs" />
+    <Compile Include="WindowEvents\IVisibilityChanged.cs" />
     <Compile Include="WindowEvents\LoadedBindings.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
